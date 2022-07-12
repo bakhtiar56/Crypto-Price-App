@@ -39,21 +39,26 @@ function App() {
         />
       </div>
       <div className="cryptoDisplay">
-       All Prices are in USD($)
-        {coinList && filteredCoins.map((coin) => {
-          return (
-            <Coin
-              name={coin.name}
-              icon={coin.icon}
-              price={coin.price}
-              symbol={coin.symbol}
-            />
-          );
-        })}
-        {coinList?(<div>Loading</div>)}
+        {coinlist ? (
+          filteredCoins.map((coin) => {
+            return (
+              <>
+                <Coin
+                  name={coin.name}
+                  icon={coin.icon}
+                  price={coin.price}
+                  symbol={coin.symbol}
+                />
+              </>
+            );
+          })
+        ) : (
+          <div>Loading...</div>
+        )}
       </div>
     </div>
   );
 }
 
 export default App;
+
