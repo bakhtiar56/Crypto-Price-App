@@ -39,6 +39,7 @@ function App() {
         />
       </div>
       <div className="cryptoDisplay">
+       All Prices are in USD($)
         {filteredCoins.map((coin) => {
           return (
             <Coin
