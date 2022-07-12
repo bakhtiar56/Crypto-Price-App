@@ -40,7 +40,7 @@ function App() {
       </div>
       <div className="cryptoDisplay">
        All Prices are in USD($)
-        {filteredCoins.map((coin) => {
+        {coinList && filteredCoins.map((coin) => {
           return (
             <Coin
               name={coin.name}
@@ -50,6 +50,7 @@ function App() {
             />
           );
         })}
+        {coinList?(<div>Loading</div>)}
       </div>
     </div>
   );
